@@ -251,15 +251,16 @@ def sitemap():
     data = load_data()
     products = [p for p in data.get('products', []) if p.get('visible', True)]
     now = datetime.now().strftime('%Y-%m-%d')
+    site_url = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
     xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
     # Trang chủ
-    xml += f'  <url><loc>https://tagluxe.vn/</loc><lastmod>{now}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n'
+    xml += f'  <url><loc>{site_url}/</loc><lastmod>{now}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n'
     # Trang sản phẩm + images
     for p in products:
         xml += f'  <url>\n'
-        xml += f'    <loc>https://tagluxe.vn/product/{p["id"]}</loc>\n'
+        xml += f'    <loc>{site_url}/product/{p["id"]}</loc>\n'
         xml += f'    <lastmod>{now}</lastmod>\n'
         xml += f'    <changefreq>monthly</changefreq>\n'
         xml += f'    <priority>0.8</priority>\n'
@@ -267,7 +268,7 @@ def sitemap():
         for img in imgs[:5]:
             if img:
                 xml += f'    <image:image>\n'
-                xml += f'      <image:loc>https://tagluxe.vn/static/uploads/{img}</image:loc>\n'
+                xml += f'      <image:loc>{site_url}/static/uploads/{img}</image:loc>\n'
                 xml += f'      <image:title>{p["name"]} - TagLuxe</image:title>\n'
                 xml += f'    </image:image>\n'
         xml += f'  </url>\n'
@@ -276,7 +277,8 @@ def sitemap():
 
 @app.route('/robots.txt')
 def robots():
-    txt = 'User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/*\nSitemap: https://tagluxe.vn/sitemap.xml\n'
+    site_url = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
+    txt = f'User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/*\nSitemap: {site_url}/sitemap.xml\n'
     return Response(txt, mimetype='text/plain')
 
 @app.errorhandler(404)

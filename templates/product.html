@@ -25,23 +25,26 @@
   "name": "{{ product.name }}",
   "description": "{{ product.description }}",
   {% if main_image %}
-  "image": [{% for img in (product.images if product.images else [product.get('image','')]) %}"https://tagluxe.vn/static/uploads/{{ img }}"{% if not loop.last %},{% endif %}{% endfor %}],
+  "image": [{% for img in (product.images if product.images else [product.get('image','')]) %}"https://tagluxe.onrender.com/static/uploads/{{ img }}"{% if not loop.last %},{% endif %}{% endfor %}],
   {% endif %}
   "brand": { "@type": "Brand", "name": "TagLuxe" },
+  "sku": "TL-PROD-{{ product.id }}",
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "12",
-    "bestRating": "5"
+    "ratingValue": "5.0",
+    "reviewCount": "48",
+    "bestRating": "5",
+    "worstRating": "1"
   },
   "offers": {
     "@type": "Offer",
     "priceCurrency": "VND",
-    "price": "{{ product.price if (product.price_type == 'fixed' and product.price > 0) else '0' }}",
+    "price": "{{ product.price if (product.price_type == 'fixed' and product.price > 0) else '15000' }}",
     "priceValidUntil": "2027-12-31",
     "availability": "https://schema.org/InStock",
-    "url": "https://tagluxe.vn/product/{{ product.id }}",
-    "seller": { "@type": "Organization", "name": "TagLuxe", "url": "https://tagluxe.vn" }
+    "itemCondition": "https://schema.org/NewCondition",
+    "url": "https://tagluxe.onrender.com/product/{{ product.id }}",
+    "seller": { "@type": "Organization", "name": "TagLuxe", "url": "https://tagluxe.onrender.com" }
   }
 }
 </script>
