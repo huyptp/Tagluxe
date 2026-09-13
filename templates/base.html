@@ -34,14 +34,9 @@
     <meta name="twitter:image" content="https://tagluxe.vn/static/uploads/media_1786037638569.jpg">
 
     <!-- ===== GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
-    <!-- Bước 1: Đăng nhập https://search.google.com/search-console -->
-    <!-- Bước 2: Thêm property "tagluxe.vn" -->
-    <!-- Bước 3: Chọn "HTML tag" và paste meta tag vào đây: -->
     {% if config.get('GOOGLE_SITE_VERIFICATION') %}
     <meta name="google-site-verification" content="{{ config['GOOGLE_SITE_VERIFICATION'] }}">
     {% endif %}
-    <!-- Placeholder thủ công (xóa comment và thay YOUR_CODE khi có): -->
-    <!-- <meta name="google-site-verification" content="YOUR_CODE_HERE"> -->
 
     <!-- ===== SCHEMA.ORG: LOCAL BUSINESS (JSON-LD) ===== -->
     {% block schema %}
