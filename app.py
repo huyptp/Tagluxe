@@ -9,6 +9,8 @@ app = Flask(__name__)
 app.secret_key = 'tagluxe_super_secret_key'
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB limit
+app.config['FACEBOOK_PIXEL_ID'] = os.environ.get('FACEBOOK_PIXEL_ID', '')
+app.config['GOOGLE_SITE_VERIFICATION'] = os.environ.get('GOOGLE_SITE_VERIFICATION', '')
 
 DATA_FILE = 'data.json'
 
