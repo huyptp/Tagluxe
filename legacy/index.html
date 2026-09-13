@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagluxe - In Dây Đeo Thẻ, Thẻ Tên & Phụ Kiện Theo Yêu Cầu | UTE Startup</title>
+    <meta name="description" content="Tagluxe Studio - Xưởng chuyên sản xuất & in ấn dây đeo thẻ, thẻ tên PVC, phụ kiện móc khóa theo yêu cầu cho doanh nghiệp, trường học & sự kiện. Bộ thiết kế 2D live trực quan.">
+    <meta name="keywords" content="in dây đeo thẻ, dây đeo thẻ sinh viên, dây đeo thẻ nhân viên, Tagluxe, UTE startup, in thẻ tên, móc khóa theo yêu cầu">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span class="badge-tag"><i data-lucide="sparkles"></i> TAGLUXE • UTE STARTUP</span>
+                <span>Chuyên in Dây Đeo Thẻ & Phụ Kiện chất lượng cao theo yêu cầu</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:0987654321" class="contact-link"><i data-lucide="phone-call"></i> Hotline/Zalo: 0987.654.321</a>
+                <span class="divider">|</span>
+                <span class="location-tag"><i data-lucide="map-pin"></i> ĐH Sư Phạm Kỹ Thuật TP.HCM (HCMUTE)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon"><i data-lucide="tag"></i></div>
+                <div class="logo-text">
+                    <span class="brand-name">TAG<span class="highlight">LUXE</span></span>
+                    <span class="brand-sub">STUDIO • IN DÂY ĐEO THẺ</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link active">Trang chủ</a>
+                <a href="#customizer" class="nav-link highlight-btn"><i data-lucide="palette"></i> Live Customizer 2D</a>
+                <a href="#pricing" class="nav-link">Báo giá tự động</a>
+                <a href="#products" class="nav-link">Sản phẩm & Mẫu</a>
+                <a href="#process" class="nav-link">Quy trình in</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggleBtn" title="Đổi giao diện">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <button class="cart-btn" id="openCartBtn">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-label">Giỏ thiết kế</span>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#hero" class="mobile-nav-link">Trang chủ</a>
+        <a href="#customizer" class="mobile-nav-link">Live Customizer 2D</a>
+        <a href="#pricing" class="mobile-nav-link">Báo giá tự động</a>
+        <a href="#products" class="mobile-nav-link">Sản phẩm & Mẫu</a>
+        <a href="#process" class="mobile-nav-link">Quy trình in</a>
+        <a href="#contact" class="mobile-nav-link">Liên hệ</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-grid">
+            <div class="hero-text-content">
+                <div class="hero-badge">
+                    <i data-lucide="shield-check"></i> Sản Phẩm Độc Quyền Từ Tagluxe - UTE Startup
+                </div>
+                <h1 class="hero-title">
+                    In Dây Đeo Thẻ & Phụ Kiện <br>
+                    <span class="gradient-text">Theo Yêu Cầu Cao Cấp</span>
+                </h1>
+                <p class="hero-description">
+                    Trải nghiệm bộ thiết kế 2D live trực quan đầu tiên tại Việt Nam. Tùy chỉnh màu sắc dây, kiểu in logo, bản rộng & phụ kiện móc khóa chỉ trong vài thao tác. Báo giá tự động theo số lượng, sắc nét chuẩn 4K Sublimation.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#customizer" class="btn btn-primary btn-glow">
+                        <i data-lucide="wand-2"></i> Thiết Kế Live Ngay
+                    </a>
+                    <a href="#pricing" class="btn btn-secondary">
+                        <i data-lucide="calculator"></i> Bảng Giá Chi Tiết
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i data-lucide="message-square"></i> Tư Vấn Mẫu Thử
+                    </a>
+                </div>
+
+                <div class="hero-stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">100K+</span>
+                        <span class="stat-label">Dây đeo đã sản xuất</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Doanh nghiệp & Trường học</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">2-4 Ngày</span>
+                        <span class="stat-label">Sản xuất siêu tốc</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Chuẩn màu Pantone</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual-card">
+                <div class="glass-card hero-image-wrapper">
+                    <img src="assets/images/hero.jpg" alt="Dây đeo thẻ cao cấp Tagluxe" class="hero-img">
+                    <div class="image-overlay-badge">
+                        <div class="badge-icon"><i data-lucide="check-circle-2"></i></div>
+                        <div>
+                            <strong>Công Nghệ In Chuyển Nhiệt 4K</strong>
+                            <span>Không phai màu • Sắc nét đến từng chi tiết nhỏ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE 2D CUSTOMIZER STUDIO SECTION -->
+    <section class="studio-section" id="customizer">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i data-lucide="layers"></i> Tagluxe Live Studio</span>
+                <h2 class="section-title">Bộ Thiết Kế Dây Đeo Thẻ 2D Trực Quan</h2>
+                <p class="section-subtitle">Tự do phối màu, chèn logo, thay đổi kiểu móc khóa và xem ngay kết quả xem trước thực tế thời gian thực.</p>
+            </div>
+
+            <div class="studio-layout">
+                <!-- Left: Interactive Canvas Visualizer -->
+                <div class="studio-visualizer glass-card">
+                    <div class="canvas-header">
+                        <div class="canvas-status">
+                            <span class="live-dot"></span>
+                            <span id="canvasPresetTitle">Dây đeo thẻ Tagluxe Standard 2.0cm</span>
+                        </div>
+                        <div class="canvas-tools">
+                            <button class="tool-btn" id="toggleCardBtn" title="Bật/tắt bao thẻ"><i data-lucide="id-card"></i> Bao thẻ</button>
+                            <button class="tool-btn" id="flipCanvasBtn" title="Xoay mặt dây"><i data-lucide="refresh-cw"></i> Đổi góc xem</button>
+                            <button class="tool-btn highlight" id="exportMockupBtn"><i data-lucide="download"></i> Tải Mockup</button>
+                        </div>
+                    </div>
+
+                    <!-- Canvas Area -->
+                    <div class="canvas-viewport">
+                        <canvas id="lanyardCanvas" width="550" height="650"></canvas>
+                        <div class="canvas-watermark">TAGLUXE • UTE STARTUP DEMO</div>
+                    </div>
+
+                    <div class="canvas-footer-info">
+                        <div class="info-item">
+                            <i data-lucide="ruler"></i> Khổ dây: <strong id="summaryWidth">2.0 cm</strong>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="sparkles"></i> Vải: <strong id="summaryMaterial">Polyester Gân</strong>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="paperclip"></i> Móc: <strong id="summaryHook">Móc khỉ inox</strong>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="shield"></i> Khóa giật: <strong id="summarySafety">Có</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Customizer Controls Panel -->
+                <div class="studio-controls glass-card">
+                    <div class="controls-tabs">
+                        <button class="tab-btn active" data-tab="tab-specs"><i data-lucide="sliders"></i> Dây & Chất liệu</button>
+                        <button class="tab-btn" data-tab="tab-colors"><i data-lucide="palette"></i> Phối màu</button>
+                        <button class="tab-btn" data-tab="tab-branding"><i data-lucide="type"></i> In Logo & Text</button>
+                        <button class="tab-btn" data-tab="tab-hooks"><i data-lucide="paperclip"></i> Móc & Phụ kiện</button>
+                    </div>
+
+                    <div class="tab-content-container">
+                        <!-- TAB 1: Dây & Chất liệu -->
+                        <div class="tab-content active" id="tab-specs">
+                            <div class="form-group">
+                                <label class="form-label">Bản rộng dây đeo (Kích thước):</label>
+                                <div class="options-grid grid-3">
+                                    <button class="opt-btn active" data-width="1.5">
+                                        <span class="opt-title">1.5 cm</span>
+                                        <span class="opt-sub">Nhẹ nhàng, nhỏ gọn</span>
+                                    </button>
+                                    <button class="opt-btn" data-width="2.0">
+                                        <span class="opt-title">2.0 cm (Chuẩn)</span>
+                                        <span class="opt-sub">Nổi bật, phổ biến nhất</span>
+                                    </button>
+                                    <button class="opt-btn" data-width="2.5">
+                                        <span class="opt-title">2.5 cm</span>
+                                        <span class="opt-sub">Sang trọng, in logo lớn</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Loại vải & Công nghệ dệt:</label>
+                                <div class="options-list">
+                                    <label class="radio-card active">
+                                        <input type="radio" name="material" value="poly" checked>
+                                        <div class="radio-body">
+                                            <div class="radio-title">Vải Polyester cao cấp (Gân chéo)</div>
+                                            <div class="radio-desc">Bền bỉ, bám mực tốt, chịu lực cao, giá tốt nhất.</div>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="material" value="satin">
+                                        <div class="radio-body">
+                                            <div class="radio-title">Vải Lụa Satin Bóng (Mịn màng)</div>
+                                            <div class="radio-desc">Bề mặt mịn mát, bóng bẩy sang trọng, chống trầy xước.</div>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="material" value="eco">
+                                        <div class="radio-body">
+                                            <div class="radio-title">Vải Tái Chế Eco-PET (Thân thiện môi trường)</div>
+                                            <div class="radio-desc">Làm từ chai nhựa tái chế, đạt chuẩn chứng nhận xanh ESG.</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Công nghệ in ấn:</label>
+                                <select class="form-select" id="printTechSelect">
+                                    <option value="sublimation">In Chuyển Nhiệt Sublimation (Full màu 2 mặt - Khuyên dùng)</option>
+                                    <option value="screen">In Lụa Chìm Cao Cấp (1-2 màu tối giản)</option>
+                                    <option value="woven">In Dệt Nổi Logo Chống Phai (Đơn hàng từ 300 sợi)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2: Phối màu -->
+                        <div class="tab-content" id="tab-colors">
+                            <div class="form-group">
+                                <label class="form-label">Màu nền dây đeo chính:</label>
+                                <div class="color-palette" id="strapColorPalette">
+                                    <!-- Preset colors generated by JS -->
+                                </div>
+                                <div class="custom-color-picker mt-3">
+                                    <span>Tùy chỉnh màu HEX/Custom:</span>
+                                    <input type="color" id="strapCustomColor" value="#0f172a">
+                                    <span class="color-code" id="strapColorHex">#0F172A</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Màu viền chỉ may / Stitching line:</label>
+                                <div class="color-palette" id="borderColorPalette">
+                                    <!-- Border colors -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: In Logo & Text -->
+                        <div class="tab-content" id="tab-branding">
+                            <div class="form-group">
+                                <label class="form-label">Nội dung chữ / Slogan in trên dây:</label>
+                                <input type="text" id="lanyardText" class="form-input" value="TAGLUXE • IN DÂY ĐEO THẺ UTE" placeholder="Nhập tên công ty / trường học / sự kiện...">
+                            </div>
+
+                            <div class="grid-2 gap-3">
+                                <div class="form-group">
+                                    <label class="form-label">Phông chữ (Font):</label>
+                                    <select class="form-select" id="textFontSelect">
+                                        <option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans (Hiện đại)</option>
+                                        <option value="'Outfit', sans-serif">Outfit (Độc đáo)</option>
+                                        <option value="Arial, sans-serif">Arial Bold (Tiêu chuẩn)</option>
+                                        <option value="'Space Grotesk', sans-serif">Space Grotesk (Công nghệ)</option>
+                                        <option value="'Impact', sans-serif">Impact (In đậm nét)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Màu phông chữ:</label>
+                                    <div class="flex items-center gap-2">
+                                        <input type="color" id="textColorInput" value="#ffffff" class="color-input">
+                                        <span id="textColorHex">#FFFFFF</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Upload Logo Doanh Nghiệp (PNG / SVG):</label>
+                                <div class="upload-box" id="logoUploadBox">
+                                    <i data-lucide="upload-cloud"></i>
+                                    <span>Tải file Logo lên (Tự động canh lề)</span>
+                                    <input type="file" id="logoFileInput" accept="image/*" class="file-input">
+                                </div>
+                                <div class="flex gap-2 mt-2" id="logoControls" style="display: none;">
+                                    <button class="btn btn-sm btn-outline" id="removeLogoBtn"><i data-lucide="trash-2"></i> Xóa Logo</button>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="repeatLogoCheck" checked> In lặp lại liên tục
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 4: Móc & Phụ kiện -->
+                        <div class="tab-content" id="tab-hooks">
+                            <div class="form-group">
+                                <label class="form-label">Loại Móc Khóa Kim Loại:</label>
+                                <div class="options-grid grid-2">
+                                    <button class="opt-btn hook-opt active" data-hook="lobster">
+                                        <i data-lucide="paperclip"></i> Móc Khỉ Inox (Chuẩn)
+                                    </button>
+                                    <button class="opt-btn hook-opt" data-hook="oval">
+                                        <i data-lucide="circle-dot"></i> Móc Giọt Nước Xoay 360°
+                                    </button>
+                                    <button class="opt-btn hook-opt" data-hook="bulldog">
+                                        <i data-lucide="scissors"></i> Móc Kẹp Cá Sấu
+                                    </button>
+                                    <button class="opt-btn hook-opt" data-hook="keyring">
+                                        <i data-lucide="key"></i> Móc Vòng Tròn Keyring
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Khóa Phụ Kiện Nâng Cấp:</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-card">
+                                        <input type="checkbox" id="safetyBreakawayCheck" checked>
+                                        <div class="card-body">
+                                            <strong>Khóa an toàn chống giật cổ (Safety Breakaway)</strong>
+                                            <span>Tự bật mở khi lực kéo mạnh, bảo vệ an toàn cho người đeo.</span>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card">
+                                        <input type="checkbox" id="quickReleaseCheck">
+                                        <div class="card-body">
+                                            <strong>Khóa cắm nhựa tháo rời nhanh (Quick Release Buckle)</strong>
+                                            <span>Dễ dàng tháo rời phần dưới để quẹt thẻ hoặc cắm USB/chìa khóa.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Đi Kèm Bao Thẻ Kê Đeo:</label>
+                                <select class="form-select" id="badgeHolderSelect">
+                                    <option value="pvc">Bao thẻ PVC dẻo trong suốt (Miễn phí đi kèm)</option>
+                                    <option value="acrylic">Bao thẻ nhựa Acrylic cứng chống trầy</option>
+                                    <option value="leather">Bao thẻ da PU cao cấp 2 mặt (Chuyên nghiệp)</option>
+                                    <option value="none">Không kèm bao thẻ (Chỉ lấy dây đeo)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Price Summary Card inside Controls -->
+                    <div class="studio-price-box">
+                        <div class="price-header">
+                            <div>
+                                <span class="price-label">Số lượng dự kiến:</span>
+                                <div class="qty-control">
+                                    <button class="qty-btn" id="qtyMinusBtn">-</button>
+                                    <input type="number" id="studioQtyInput" value="100" min="20" max="10000">
+                                    <button class="qty-btn" id="qtyPlusBtn">+</button>
+                                    <span class="qty-unit">sợi</span>
+                                </div>
+                            </div>
+                            <div class="price-amount-wrapper">
+                                <span class="unit-price-display" id="unitPriceDisplay">14.000 đ/sợi</span>
+                                <div class="total-price-display" id="totalPriceDisplay">1.400.000 đ</div>
+                            </div>
+                        </div>
+
+                        <div class="studio-action-buttons">
+                            <button class="btn btn-primary btn-block btn-lg" id="addToCartStudioBtn">
+                                <i data-lucide="shopping-cart"></i> Đưa Thiết Kế Vào Giỏ Hàng
+                            </button>
+                            <button class="btn btn-outline btn-block" id="quickQuoteBtn">
+                                <i data-lucide="file-text"></i> Nhận Báo Giá File PDF / Zalo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTOMATIC PRICING CALCULATOR SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i data-lucide="calculator"></i> Bảng Giá Minh Bạch</span>
+                <h2 class="section-title">Bộ Tính Giá Tự Động Theo Số Lượng</h2>
+                <p class="section-subtitle">Đặt càng nhiều - Giá càng rẻ. Cam kết không phát sinh chi phí ẩn.</p>
+            </div>
+
+            <div class="pricing-card-wrapper glass-card">
+                <div class="pricing-grid">
+                    <div class="pricing-calculator">
+                        <h3 class="card-subtitle"><i data-lucide="sliders-horizontal"></i> Điều chỉnh thông số đơn hàng</h3>
+                        
+                        <div class="form-group">
+                            <div class="slider-header">
+                                <label>Số lượng sản xuất:</label>
+                                <span class="slider-value" id="rangeQtyDisplay">200 sợi</span>
+                            </div>
+                            <input type="range" min="20" max="2000" step="10" value="200" class="custom-slider" id="pricingSlider">
+                            <div class="tier-labels">
+                                <span>20 sợi</span>
+                                <span>100 sợi</span>
+                                <span>500 sợi</span>
+                                <span>1000+ sợi</span>
+                            </div>
+                        </div>
+
+                        <div class="grid-2 gap-3 mt-4">
+                            <div class="form-group">
+                                <label class="form-label">Khổ dây chọn:</label>
+                                <select class="form-select" id="calcWidthSelect">
+                                    <option value="1.5">1.5 cm</option>
+                                    <option value="2.0" selected>2.0 cm (Phổ biến)</option>
+                                    <option value="2.5">2.5 cm</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Loại vải:</label>
+                                <select class="form-select" id="calcMaterialSelect">
+                                    <option value="poly">Polyester Gân</option>
+                                    <option value="satin">Lụa Satin Bóng (+2k/sợi)</option>
+                                    <option value="eco">Tái Chế Eco-PET (+3k/sợi)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label class="form-label">Tiện ích kèm theo:</label>
+                            <div class="grid-2 gap-2">
+                                <label class="checkbox-chip">
+                                    <input type="checkbox" id="calcBadgeCheck" checked> + Bao thẻ dẻo PVC
+                                </label>
+                                <label class="checkbox-chip">
+                                    <input type="checkbox" id="calcSafetyCheck" checked> + Khóa an toàn giật cổ
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-breakdown">
+                        <div class="breakdown-card">
+                            <div class="tier-badge-highlight" id="tierDiscountBadge">Tiết kiệm 35% so với giá bán lẻ</div>
+                            
+                            <div class="breakdown-row">
+                                <span>Đơn giá 1 sợi:</span>
+                                <strong id="calcUnitPrice" class="text-xl">11.500 VNĐ</strong>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Tổng số lượng:</span>
+                                <strong id="calcTotalQty">200 sợi</strong>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Thời gian sản xuất:</span>
+                                <strong>2 - 3 ngày làm việc</strong>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Phí thiết kế demo:</span>
+                                <strong class="text-success"><i data-lucide="check"></i> Miễn phí 100%</strong>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Vận chuyển:</span>
+                                <strong class="text-success"><i data-lucide="truck"></i> Miễn phí nội thành TP.HCM</strong>
+                            </div>
+
+                            <hr class="divider-line">
+
+                            <div class="breakdown-total">
+                                <span>Tổng chi phí dự kiến:</span>
+                                <div class="total-price" id="calcGrandTotal">2.300.000 VNĐ</div>
+                                <small class="vat-note">(Đã bao gồm thuế & hỗ trợ xuất hóa đơn VAT doanh nghiệp)</small>
+                            </div>
+
+                            <button class="btn btn-primary btn-block btn-lg mt-4" id="pricingOrderBtn">
+                                <i data-lucide="check-circle-2"></i> Đặt Hàng Theo Số Lượng Này
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS CATALOG & GALLERY SHOWCASE -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i data-lucide="package"></i> Danh Mục & Mẫu Đã Sản Xuất</span>
+                <h2 class="section-title">Sản Phẩm Nổi Bật Tại Tagluxe</h2>
+                <p class="section-subtitle">Khám phá các mẫu dây đeo thẻ doanh nghiệp, sinh viên & phụ kiện móc khóa ấn tượng.</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="catalog-filters">
+                <button class="filter-btn active" data-filter="all">Tất cả sản phẩm</button>
+                <button class="filter-btn" data-filter="corporate">Dây Đeo Doanh Nghiệp</button>
+                <button class="filter-btn" data-filter="student">Dây Đeo Sinh Viên (UTE)</button>
+                <button class="filter-btn" data-filter="event">Dây Đeo Sự Kiện / VIP</button>
+                <button class="filter-btn" data-filter="keychain">Móc Khóa Theo Yêu Cầu</button>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Product items will be rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW PROCESS SECTION -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i data-lucide="workflow"></i> Quy Trình Sản Xuất</span>
+                <h2 class="section-title">4 Bước Đặt In Dây Đeo Dễ Dàng</h2>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card glass-card">
+                    <div class="step-num">01</div>
+                    <div class="step-icon"><i data-lucide="wand-2"></i></div>
+                    <h3>Tùy Chỉnh / Gửi File</h3>
+                    <p>Thiết kế trực tiếp trên Live Customizer 2D hoặc gửi file thiết kế AI/Corel/PNG cho Tagluxe qua Zalo.</p>
+                </div>
+                <div class="process-card glass-card">
+                    <div class="step-num">02</div>
+                    <div class="step-icon"><i data-lucide="file-check"></i></div>
+                    <h3>Duyệt Mẫu & Báo Giá</h3>
+                    <p>Đội ngũ Tagluxe dựng bản vẽ Demo chuẩn kích thước & chốt file in miễn phí trước khi sản xuất.</p>
+                </div>
+                <div class="process-card glass-card">
+                    <div class="step-num">03</div>
+                    <div class="step-icon"><i data-lucide="printer"></i></div>
+                    <h3>In Ấn Sublimation</h3>
+                    <p>Tiến hành in chuyển nhiệt kỹ thuật số 4K sắc nét, cắt may tự động và gia công phụ kiện kỹ lưỡng.</p>
+                </div>
+                <div class="process-card glass-card">
+                    <div class="step-num">04</div>
+                    <div class="step-icon"><i data-lucide="truck"></i></div>
+                    <h3>Giao Hàng Tận Nơi</h3>
+                    <p>Đóng gói chuẩn quy cách, kiểm tra chất lượng 100% trước khi giao đến tay khách hàng toàn quốc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & ORDER FORM SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid glass-card">
+                <div class="contact-info">
+                    <span class="section-tag"><i data-lucide="headset"></i> Hỗ Trợ 24/7</span>
+                    <h2 class="contact-title">Liên Hệ Tagluxe Studio</h2>
+                    <p>Chúng tôi luôn sẵn sàng hỗ trợ thiết kế demo miễn phí, gửi mẫu thực tế và báo giá chiết khấu cho đơn hàng doanh nghiệp.</p>
+
+                    <div class="info-list mt-4">
+                        <div class="info-card">
+                            <i data-lucide="phone-call" class="info-icon"></i>
+                            <div>
+                                <strong>Hotline / Zalo Tư Vấn:</strong>
+                                <p>0987.654.321 (Dự án UTE Startup)</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i data-lucide="mail" class="info-icon"></i>
+                            <div>
+                                <strong>Email Yêu Cầu Báo Giá:</strong>
+                                <p>tagluxe.indaydeothe@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i data-lucide="map-pin" class="info-icon"></i>
+                            <div>
+                                <strong>Địa Chỉ Xưởng & Văn Phòng:</strong>
+                                <p>Trường Đại học Sư Phạm Kỹ Thuật TP.HCM (HCMUTE), TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Gửi Yêu Cầu Báo Giá Fast-Track</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="custName" class="form-input" placeholder="Họ và tên của bạn *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="custPhone" class="form-input" placeholder="Số điện thoại / Zalo *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="custCompany" class="form-input" placeholder="Tên đơn vị / Doanh nghiệp / Trường">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="custNote" class="form-textarea" rows="4" placeholder="Mô tả số lượng, nội dung in hoặc ghi chú thêm..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <i data-lucide="send"></i> Gửi Yêu Cầu Tư Vấn Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <div class="brand-logo">
+                    <div class="logo-icon"><i data-lucide="tag"></i></div>
+                    <span class="brand-name">TAG<span class="highlight">LUXE</span></span>
+                </div>
+                <p class="mt-2">Thương hiệu chuyên in ấn & sản xuất dây đeo thẻ, phụ kiện móc khóa uy tín từ UTE Startup.</p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/Tagluxe.indaydeothe?locale=vi_VN" target="_blank" class="social-icon" title="Facebook Tagluxe"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="social-icon" title="Zalo Official"><i data-lucide="message-circle"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Sản Phẩm In</h4>
+                <ul>
+                    <li><a href="#customizer">In Dây Đeo Thẻ 1.5cm - 2.5cm</a></li>
+                    <li><a href="#products">Thẻ Tên Nhân Viên / Sinh Viên</a></li>
+                    <li><a href="#products">Phụ Kiện Móc Khóa Mica / Acrylic</a></li>
+                    <li><a href="#products">Bao Thẻ Da Cao Cấp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hỗ Trợ Khách Hàng</h4>
+                <ul>
+                    <li><a href="#process">Quy trình in & duyệt mẫu</a></li>
+                    <li><a href="#pricing">Chính sách chiết khấu số lượng</a></li>
+                    <li><a href="#contact">Chính sách bảo hành màu in</a></li>
+                    <li><a href="#contact">Hướng dẫn gửi file in AI/SVG</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 TAGLUXE STUDIO • HCMUTE STARTUP PROJECT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SHOPPING CART DRAWER / MODAL -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-drawer glass-card">
+            <div class="cart-header">
+                <h3><i data-lucide="shopping-bag"></i> Giỏ Hàng Thiết Kế Tagluxe</h3>
+                <button class="icon-btn" id="closeCartBtn"><i data-lucide="x"></i></button>
+            </div>
+            <div class="cart-body" id="cartItemsContainer">
+                <!-- Cart items list dynamically populated -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-summary-row">
+                    <span>Tổng đơn hàng:</span>
+                    <strong id="cartGrandTotal" class="text-xl text-primary">0 VNĐ</strong>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg mt-3" id="checkoutBtn">
+                    <i data-lucide="check-square"></i> Tiến Hành Đặt Hàng & Gửi File
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Custom App Script -->
+    <script src="app.js"></script>
+</body>
+</html>

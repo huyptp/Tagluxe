@@ -1,0 +1,98 @@
+{
+  "products": [
+    {
+      "id": "lan-1",
+      "name": "Dây đeo thẻ Lụa Satin Cao Cấp",
+      "category": "lanyard",
+      "description": "Dây đeo thẻ in chuyển nhiệt sắc nét trên nền lụa Satin mịn màng, cao cấp. Chống trầy xước, không bay màu, thích hợp cho doanh nghiệp, fandom và sự kiện VIP.",
+      "images": [
+        "media_1786037379657.jpg",
+        "media_1789285818722.jpg",
+        "media_1789286120138.jpg",
+        "media_1786037379884.jpg"
+      ],
+      "width": "2.0 cm",
+      "min_order": 10,
+      "price_type": "contact",
+      "price": 0,
+      "featured": true,
+      "visible": true
+    },
+    {
+      "id": "lan-2",
+      "name": "Dây đeo thẻ In Chuyển Nhiệt Full Màu",
+      "category": "lanyard",
+      "description": "Dây đeo thẻ Polyester gân in chuyển nhiệt full màu sắc nét, không giới hạn màu. Sự lựa chọn phổ biến cho trường học, câu lạc bộ, sự kiện và fandom.",
+      "images": [
+        "media_1789285818629.jpg",
+        "media_1789285818730.jpg",
+        "media_1789285818752.jpg",
+        "media_1789285818740.jpg",
+        "media_1786037379878.jpg"
+      ],
+      "width": "1.5 cm / 2.0 cm",
+      "min_order": 10,
+      "price_type": "fixed",
+      "price": 25000,
+      "featured": true,
+      "visible": true
+    },
+    {
+      "id": "lan-3",
+      "name": "Dây đeo thẻ tích hợp Yoyo co rút",
+      "category": "lanyard",
+      "description": "Dây đeo thẻ in lụa hoặc chuyển nhiệt kết hợp Yoyo co rút thông minh, tiện lợi khi quẹt thẻ từ/thẻ thang máy. Phù hợp cho nhân viên văn phòng, bệnh viện và toà nhà văn phòng.",
+      "images": [
+        "media_1789286120150.jpg"
+      ],
+      "width": "1.5 cm",
+      "min_order": 20,
+      "price_type": "contact",
+      "price": 0,
+      "featured": true,
+      "visible": true
+    },
+    {
+      "id": "acc-1",
+      "name": "Thẻ nhựa PVC in theo yêu cầu",
+      "category": "accessory",
+      "description": "Thẻ nhựa PVC in 2 mặt full màu sắc nét theo thiết kế riêng. Phù hợp cho thẻ nhân viên, thẻ sinh viên, thẻ sự kiện, fandom và câu lạc bộ. Nhận từ 10 thẻ.",
+      "images": [
+        "media_1789319927667.jpg",
+        "media_1789287481499.jpg",
+        "media_1789286065178.jpg",
+        "media_1789286065185.jpg",
+        "media_1789287481503.jpg",
+        "media_1789319983784.jpg"
+      ],
+      "width": "Chuẩn thẻ ATM (86x54mm)",
+      "material": "Chất liệu PVC",
+      "min_order": 10,
+      "price_type": "contact",
+      "price": 0,
+      "featured": true,
+      "visible": true
+    },
+    {
+      "id": "acc-2",
+      "name": "Vỏ đựng thẻ (Card holder) in theo yêu cầu",
+      "category": "accessory",
+      "description": "Vỏ đựng thẻ cứng cáp in full màu theo thiết kế riêng, bảo vệ thẻ khỏi trầy xước, cong vênh. Thiết kế sang trọng, có thể in logo nhận diện thương hiệu.",
+      "images": [
+        "media_1789317114085.jpg",
+        "media_1789287073763.jpg",
+        "media_1789286087649.jpg",
+        "media_1789286087652.jpg",
+        "media_1789286087760.jpg",
+        "media_1789320043265.jpg"
+      ],
+      "width": "Vừa thẻ tiêu chuẩn (86x54mm)",
+      "material": "Chất liệu nhựa ABS",
+      "min_order": 50,
+      "price_type": "contact",
+      "price": 0,
+      "featured": true,
+      "visible": true
+    }
+  ]
+}

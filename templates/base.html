@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO: TITLE & META ===== -->
+    <title>{% block title %}TagLuxe - In Dây Đeo Thẻ Theo Yêu Cầu | Thẻ Nhựa PVC, Vỏ Thẻ TP.HCM{% endblock %}</title>
+    <meta name="description" content="{% block meta_desc %}TagLuxe chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ cho doanh nghiệp, trường học, câu lạc bộ và fandom. Nhận từ 10 dây, hỗ trợ thiết kế cơ bản, giao toàn quốc, Có VAT.{% endblock %}">
+    <meta name="keywords" content="in dây đeo thẻ, dây đeo thẻ theo yêu cầu, dây đeo thẻ giá rẻ, in thẻ nhựa PVC, vỏ đựng thẻ, card holder in ấn, in dây đeo thẻ TP.HCM, dây đeo thẻ doanh nghiệp, dây đeo thẻ sinh viên, dây đeo thẻ fandom, TagLuxe">
+    <meta name="author" content="TagLuxe">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#111111">
+
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://tagluxe.vn{% block canonical_path %}/{% endblock %}">
+
+    <!-- ===== OPEN GRAPH (Facebook/Zalo preview) ===== -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:url" content="https://tagluxe.vn{% block og_url %}/{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}TagLuxe - In Dây Đeo Thẻ Theo Yêu Cầu Cao Cấp{% endblock %}">
+    <meta property="og:description" content="{% block og_desc %}Đeo nhận diện, tỏa thương hiệu. Nhận in dây đeo thẻ từ 10 dây, hỗ trợ thiết kế cơ bản, Có VAT. Liên hệ Zalo: 0343 019 097.{% endblock %}">
+    <meta property="og:image" content="https://tagluxe.vn/static/uploads/media_1786037638569.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="TagLuxe - In dây đeo thẻ theo yêu cầu">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="TagLuxe">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TagLuxe - In Dây Đeo Thẻ Theo Yêu Cầu">
+    <meta name="twitter:description" content="Đeo nhận diện, tỏa thương hiệu. Nhận in dây đeo thẻ từ 10 dây.">
+    <meta name="twitter:image" content="https://tagluxe.vn/static/uploads/media_1786037638569.jpg">
+
+    <!-- ===== GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
+    <!-- Bước 1: Đăng nhập https://search.google.com/search-console -->
+    <!-- Bước 2: Thêm property "tagluxe.vn" -->
+    <!-- Bước 3: Chọn "HTML tag" và paste meta tag vào đây: -->
+    {% if config.get('GOOGLE_SITE_VERIFICATION') %}
+    <meta name="google-site-verification" content="{{ config['GOOGLE_SITE_VERIFICATION'] }}">
+    {% endif %}
+    <!-- Placeholder thủ công (xóa comment và thay YOUR_CODE khi có): -->
+    <!-- <meta name="google-site-verification" content="YOUR_CODE_HERE"> -->
+
+    <!-- ===== SCHEMA.ORG: LOCAL BUSINESS (JSON-LD) ===== -->
+    {% block schema %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://tagluxe.vn/#organization",
+      "name": "TagLuxe",
+      "description": "Chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ cho doanh nghiệp, trường học, câu lạc bộ và sự kiện tại TP.HCM.",
+      "url": "https://tagluxe.vn",
+      "telephone": "+84343019097",
+      "image": "https://tagluxe.vn/static/uploads/media_1786037638569.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tagluxe.vn/static/uploads/media_1786037638569.jpg",
+        "width": 200,
+        "height": 200
+      },
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "32 Đường số 2, Phường Tăng Nhơn Phú",
+          "addressLocality": "Thành phố Hồ Chí Minh",
+          "addressRegion": "TP.HCM",
+          "addressCountry": "VN"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "51 Ngõ 1 Nguỵ Như Kon Tum, Phường Thanh Xuân",
+          "addressLocality": "Hà Nội",
+          "addressRegion": "Hà Nội",
+          "addressCountry": "VN"
+        }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.8400,
+        "longitude": 106.7800
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "21:00"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84343019097",
+        "contactType": "customer service",
+        "areaServed": "VN",
+        "availableLanguage": "Vietnamese"
+      },
+      "sameAs": [
+        "https://www.facebook.com/Tagluxe.indaydeothe",
+        "https://zalo.me/0343019097"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Dây đeo thẻ & Phụ kiện",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Dây đeo thẻ in theo yêu cầu",
+              "description": "In chuyển nhiệt sắc nét, nhiều chất liệu, nhận từ 10 dây"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Thẻ nhựa PVC in theo yêu cầu",
+              "description": "Thẻ nhựa PVC in 2 mặt full màu sắc nét"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Vỏ đựng thẻ (Card holder) in ấn",
+              "description": "Vỏ đựng thẻ in full màu theo thiết kế riêng"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    {% endblock %}
+
+    <!-- ===== FAQ SCHEMA ===== -->
+    {% block faq_schema %}{% endblock %}
+
+    <!-- ===== PRODUCT SCHEMA ===== -->
+    {% block product_schema %}{% endblock %}
+
+    <!-- Performance: DNS prefetch & preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=3.0">
+
+    <!-- Preload critical above-fold image -->
+    {% block preload_image %}{% endblock %}
+
+    <!-- ===== META PIXEL (Facebook) ===== -->
+    <!-- Bước 1: Vào https://business.facebook.com → Events Manager → Connect Data Source -->
+    <!-- Bước 2: Chọn Web → Facebook Pixel → Thay YOUR_PIXEL_ID bên dưới -->
+    <!-- Bỏ comment 3 dòng dưới khi đã có Pixel ID: -->
+    <!--
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    -->
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" role="banner">
+        <div class="container header-inner">
+            <a href="/" class="logo" aria-label="TagLuxe - Trang chủ">
+                <img src="{{ url_for('static', filename='uploads/media_1786037638569.jpg') }}"
+                     alt="Logo TagLuxe - In dây đeo thẻ theo yêu cầu"
+                     width="40" height="40" loading="eager">
+                <div class="logo-text">
+                    <span class="brand">TAGLUXE</span>
+                    <span class="brand-sub">In dây đeo thẻ theo yêu cầu</span>
+                </div>
+            </a>
+
+            <!-- Mobile menu toggle -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="mainNav" role="navigation" aria-label="Menu chính">
+                <a href="/#products">Dây đeo thẻ</a>
+                <a href="/#accessories">Thẻ & Vỏ thẻ</a>
+                <a href="/#process">Quy trình</a>
+                <a href="/#faq">FAQ</a>
+                <a href="/#contact">Liên hệ</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://zalo.me/0343019097" target="_blank" rel="noopener"
+                   class="btn btn-primary btn-sm" aria-label="Liên hệ tư vấn qua Zalo">
+                    <i data-lucide="message-circle"></i> Tư vấn Zalo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo" id="contact">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <h2 style="font-size:1.5rem; margin-bottom:10px;">TAGLUXE</h2>
+                <p><strong>Đeo nhận diện, tỏa thương hiệu.</strong></p>
+                <p>Chuyên in <strong>dây đeo thẻ</strong>, <strong>thẻ nhựa PVC</strong>, <strong>vỏ đựng thẻ</strong> theo yêu cầu cho doanh nghiệp, trường học, câu lạc bộ và sự kiện.</p>
+                <div style="margin-top:14px; opacity:0.9; font-size:0.88rem; line-height:1.6;">
+                    <p style="margin-bottom:4px;">📍 <strong>TP.HCM:</strong> 32 Đường số 2, P. Tăng Nhơn Phú, TP.HCM</p>
+                    <p style="margin-bottom:4px;">📍 <strong>Hà Nội:</strong> 51 Ngõ 1 Nguỵ Như Kon Tum, P. Thanh Xuân, Hà Nội</p>
+                    <p style="margin-top:6px; opacity:0.75;">🚚 Giao hàng toàn quốc &nbsp;|&nbsp; 🧾 Có VAT</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 style="font-size:1rem; margin-bottom:20px; text-transform:uppercase; letter-spacing:1px;">Liên hệ đặt hàng</h3>
+                <a href="https://zalo.me/0343019097" target="_blank" rel="noopener" aria-label="Chat Zalo TagLuxe"><i data-lucide="phone"></i> Zalo: 0343 019 097</a>
+                <a href="https://www.facebook.com/Tagluxe.indaydeothe" target="_blank" rel="noopener" aria-label="Fanpage TagLuxe"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; width:18px; height:18px;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Fanpage TagLuxe</a>
+                <a href="https://www.threads.com/@tagluxe2005" target="_blank" rel="noopener"><i data-lucide="at-sign"></i> Threads: @tagluxe2005</a>
+                <a href="https://www.tiktok.com/@shop.in.day.deo" target="_blank" rel="noopener"><i data-lucide="video"></i> TikTok: @shop.in.day.deo</a>
+            </div>
+            <div class="footer-links">
+                <h3 style="font-size:1rem; margin-bottom:20px; text-transform:uppercase; letter-spacing:1px;">Sản phẩm</h3>
+                <a href="/#products"><i data-lucide="tag"></i> In dây đeo thẻ theo yêu cầu</a>
+                <a href="/#accessories"><i data-lucide="credit-card"></i> In thẻ nhựa PVC</a>
+                <a href="/#accessories"><i data-lucide="archive"></i> Vỏ đựng thẻ (Card holder)</a>
+                <a href="/#process"><i data-lucide="list-checks"></i> Quy trình & Duyệt mẫu</a>
+                <a href="/#faq"><i data-lucide="help-circle"></i> Câu hỏi thường gặp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TagLuxe. Chuyên in dây đeo thẻ theo yêu cầu tại TP.HCM & Hà Nội.
+               | <a href="/sitemap.xml" style="color:rgba(255,255,255,0.4);">Sitemap</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 60, duration: 700, easing: 'ease-out-cubic' });
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                const open = mainNav.classList.toggle('nav-open');
+                menuToggle.setAttribute('aria-expanded', open);
+                menuToggle.classList.toggle('active', open);
+            });
+            // Close on nav link click
+            mainNav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    mainNav.classList.remove('nav-open');
+                    menuToggle.setAttribute('aria-expanded', false);
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+
+        // Switch accessory main photo smoothly
+        window.changeAccImg = function(targetId, newSrc, btn) {
+            const img = document.getElementById(targetId);
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = newSrc;
+                    img.style.opacity = '1';
+                }, 120);
+            }
+            if (btn && btn.parentElement) {
+                btn.parentElement.querySelectorAll('.acc-thumb-item').forEach(el => el.classList.remove('active'));
+                btn.classList.add('active');
+            }
+        };
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

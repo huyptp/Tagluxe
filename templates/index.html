@@ -1,0 +1,969 @@
+{% extends 'base.html' %}
+
+{% block title %}TagLuxe - In Dây Đeo Thẻ Theo Yêu Cầu | Thẻ Nhựa PVC, Vỏ Thẻ TP.HCM{% endblock %}
+{% block meta_desc %}TagLuxe chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ cho doanh nghiệp, trường học, câu lạc bộ và fandom. Nhận từ 10 dây, hỗ trợ thiết kế cơ bản, giao toàn quốc, Có VAT.{% endblock %}
+
+{% block preload_image %}
+<link rel="preload" as="image"
+      href="{{ url_for('static', filename='uploads/media_1786037379657.jpg') }}"
+      fetchpriority="high">
+{% endblock %}
+
+{% block faq_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Đặt in dây đeo thẻ số lượng tối thiểu là bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TagLuxe nhận in dây đeo thẻ từ 10 dây trở lên. Không yêu cầu số lượng lớn như các xưởng in truyền thống."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phí thiết kế demo dây đeo thẻ có mất tiền không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TagLuxe hỗ trợ thiết kế demo 2D cơ bản cho khách hàng trước khi đưa vào sản xuất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Thời gian sản xuất dây đeo thẻ là bao lâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thông thường từ 2-4 ngày làm việc tùy số lượng và độ phức tạp thiết kế. Có dịch vụ in gấp trong 1-2 ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TagLuxe có hỗ trợ xuất hóa đơn VAT không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. TagLuxe hỗ trợ xuất hóa đơn VAT đầy đủ cho doanh nghiệp và tổ chức."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có thể in dây đeo thẻ với nhiều màu sắc không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Với công nghệ in chuyển nhiệt, TagLuxe in full màu không giới hạn, sắc nét đến từng chi tiết nhỏ."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" aria-label="Giới thiệu TagLuxe">
+    <div class="container hero-inner">
+        <div class="hero-content" data-aos="fade-right">
+            <div class="badge" role="text">TagLuxe — In Dây Đeo Thẻ Theo Yêu Cầu</div>
+            <h1>In dây đeo thẻ theo yêu cầu — <span class="text-primary">Đeo nhận diện, tỏa thương hiệu</span></h1>
+            <p>
+                TagLuxe giúp doanh nghiệp, trường học, câu lạc bộ và sự kiện có bộ dây đeo thẻ chỉnh chu, đồng bộ thương hiệu.
+                In từ <strong>10 dây</strong>, <strong>hỗ trợ thiết kế cơ bản</strong>, giao toàn quốc.
+            </p>
+            <div class="hero-actions">
+                <a href="https://zalo.me/0343019097" target="_blank" rel="noopener" class="btn btn-primary" aria-label="Tư vấn đặt in dây đeo thẻ qua Zalo">
+                    <i data-lucide="message-circle"></i> Tư vấn &amp; Đặt hàng qua Zalo
+                </a>
+                <a href="https://www.facebook.com/Tagluxe.indaydeothe" target="_blank" rel="noopener" class="btn btn-secondary" aria-label="Fanpage TagLuxe">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; width:18px; height:18px;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Fanpage TagLuxe
+                </a>
+            </div>
+
+            <div class="hero-features">
+                <div class="feature"><i data-lucide="check-circle"></i> Nhận in từ 10 dây</div>
+                <div class="feature"><i data-lucide="check-circle"></i> Hỗ trợ thiết kế cơ bản</div>
+                <div class="feature"><i data-lucide="check-circle"></i> Có VAT</div>
+                <div class="feature"><i data-lucide="check-circle"></i> Giao hàng toàn quốc</div>
+            </div>
+        </div>
+        <div class="hero-image hero-marquee-wrapper" data-aos="fade-left">
+            <div class="hero-marquee-track">
+                {% set hero_imgs = ['media_1786037379657.jpg', 'media_1789285818629.jpg', 'media_1789285818722.jpg', 'media_1789286120138.jpg', 'media_1786037379884.jpg', 'media_1786037379646.jpg'] %}
+                {% for img in hero_imgs %}
+                <div class="hero-marquee-item">
+                    <img src="{{ url_for('static', filename='uploads/' + img) }}"
+                         alt="Dây đeo thẻ in theo yêu cầu TagLuxe - Mẫu {{ loop.index }}"
+                         loading="lazy" width="400" height="400">
+                </div>
+                {% endfor %}
+                {% for img in hero_imgs %}
+                <div class="hero-marquee-item">
+                    <img src="{{ url_for('static', filename='uploads/' + img) }}"
+                         alt="Dây đeo thẻ in theo yêu cầu TagLuxe - Mẫu {{ loop.index }}"
+                         loading="lazy" width="400" height="400">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== USP STRIP ===== -->
+<div class="usp-strip" aria-label="Điểm nổi bật của TagLuxe">
+    <div class="container usp-inner">
+        <div class="usp-item"><i data-lucide="shield-check"></i> In chuyển nhiệt sắc nét</div>
+        <div class="usp-item"><i data-lucide="clock"></i> Sản xuất 2-4 ngày</div>
+        <div class="usp-item"><i data-lucide="palette"></i> Full màu không giới hạn</div>
+        <div class="usp-item"><i data-lucide="truck"></i> Giao toàn quốc</div>
+        <div class="usp-item"><i data-lucide="file-text"></i> Có VAT</div>
+    </div>
+</div>
+
+<!-- ===== LANYARD PRODUCTS ===== -->
+<section id="products" class="section bg-light" aria-label="Dây đeo thẻ in theo yêu cầu">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Dây đeo thẻ in theo yêu cầu</h2>
+            <p>In chuyển nhiệt sắc nét, đa dạng chất liệu. Phù hợp cho doanh nghiệp, trường học, sự kiện và fandom.</p>
+        </div>
+
+        <!-- Photo grid — đã lọc trùng phía server -->
+        <div class="lanyard-photo-grid">
+            {% for photo in lanyard_photos %}
+            <a href="/product/{{ photo.product_id }}"
+               class="lanyard-photo-item"
+               aria-label="{{ photo.product_name }}"
+               data-aos="fade-up"
+               data-aos-delay="{{ loop.index * 50 }}">
+                <img src="{{ url_for('static', filename='uploads/' + photo.img) }}"
+                     alt="{{ photo.product_name }} - TagLuxe"
+                     loading="lazy">
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="text-center" style="margin-top:40px;" data-aos="fade-up">
+            <a href="https://zalo.me/0343019097" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.05rem; padding:14px 32px;">
+                <i data-lucide="message-circle"></i> Tư vấn & Đặt hàng ngay
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ACCESSORIES ===== -->
+<section id="accessories" class="section bg-light" aria-label="Thẻ nhựa PVC và vỏ đựng thẻ">
+    <style>
+        /* Continuous Hero Marquee Styles */
+        .hero-marquee-wrapper {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            background: #0d0d0e;
+        }
+        .hero-marquee-track {
+            display: flex;
+            width: max-content;
+            height: 100%;
+            animation: heroMarqueeScroll 20s linear infinite;
+        }
+        .hero-marquee-wrapper:hover .hero-marquee-track {
+            animation-play-state: paused;
+        }
+        .hero-marquee-item {
+            width: 380px;
+            height: 100%;
+            flex-shrink: 0;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .hero-marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+            display: block;
+        }
+        @keyframes heroMarqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 992px) {
+            .hero-marquee-wrapper {
+                height: 360px;
+            }
+            .hero-marquee-item {
+                width: 300px;
+            }
+        }
+
+        /* Accessories Section Styles */
+        .acc-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            align-items: stretch;
+            margin-top: 36px;
+        }
+        .acc-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .acc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #111827;
+        }
+        .acc-card-header {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        .acc-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #111827;
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .acc-card-header h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .acc-card-desc {
+            font-size: 1.05rem;
+            color: #4b5563;
+            line-height: 1.5;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 3.15em;
+        }
+        .acc-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .acc-grid-item {
+            position: relative;
+            display: block;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+        }
+        .acc-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .acc-grid-item:hover img {
+            transform: scale(1.08);
+        }
+        .acc-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(2px);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .acc-grid-item:hover .acc-grid-overlay {
+            opacity: 1;
+        }
+        .acc-grid-overlay i {
+            width: 22px;
+            height: 22px;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        .acc-grid-item:hover .acc-grid-overlay i {
+            transform: scale(1);
+        }
+        .acc-card-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .acc-specs-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            white-space: nowrap;
+        }
+        .acc-specs-row span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+        .acc-specs-row i {
+            width: 15px;
+            height: 15px;
+            color: #10b981;
+            flex-shrink: 0;
+        }
+        .acc-btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        .acc-btn-group .btn {
+            flex: 1;
+            justify-content: center;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            padding: 11px 16px;
+            text-align: center;
+        }
+        @media (max-width: 992px) {
+            .acc-grid-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+        @media (max-width: 576px) {
+            .acc-card {
+                padding: 20px;
+            }
+            .acc-btn-group {
+                flex-direction: column;
+            }
+            .acc-specs-row {
+                flex-wrap: wrap;
+                white-space: normal;
+                gap: 6px 12px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>In Thẻ Nhựa PVC &amp; Vỏ Đựng Thẻ Theo Yêu Cầu</h2>
+            <p>Hoàn thiện bộ nhận diện tổ chức với thẻ nhựa PVC in 2 mặt full màu sắc nét và vỏ đựng thẻ nhựa ABS cao cấp.</p>
+        </div>
+
+        <div class="acc-grid-container">
+            {% for product in accessories %}
+            {% set imgs = product.images if product.images else ([product.get('image','')] if product.get('image','') else []) %}
+            <div class="acc-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}" itemscope itemtype="https://schema.org/Product">
+                <meta itemprop="name" content="{{ product.name }}">
+                
+                <div class="acc-card-header">
+                    <span class="acc-badge">
+                        {% if 'PVC' in product.name %}Thẻ Nhựa PVC{% else %}Vỏ Đựng Thẻ{% endif %}
+                    </span>
+                    <h3>{{ product.name }}</h3>
+                    <p class="acc-card-desc">{{ product.description }}</p>
+                </div>
+
+                {% if imgs %}
+                <div class="acc-card-grid">
+                    {% for img in imgs[:6] %}
+                    <a href="/product/{{ product.id }}"
+                       class="acc-grid-item"
+                       aria-label="{{ product.name }} - mẫu {{ loop.index }}">
+                        <img src="{{ url_for('static', filename='uploads/' + img) }}"
+                             alt="{{ product.name }} - mẫu {{ loop.index }} | TagLuxe"
+                             loading="lazy" itemprop="image">
+                        <div class="acc-grid-overlay">
+                            <i data-lucide="eye"></i>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="acc-card-footer">
+                    <div class="acc-specs-row">
+                        <span><i data-lucide="layers"></i> {% if 'PVC' in product.name %}Chất liệu PVC{% else %}Nhựa ABS{% endif %}</span>
+                        <span><i data-lucide="check-circle-2"></i> In sắc nét, chuẩn màu</span>
+                        <span><i data-lucide="clock"></i> Sản xuất 2-4 ngày</span>
+                    </div>
+                    <div class="acc-btn-group">
+                        <a href="/product/{{ product.id }}" class="btn btn-primary">
+                            <i data-lucide="eye"></i> Xem chi tiết
+                        </a>
+                        <a href="https://zalo.me/0343019097" target="_blank" rel="noopener" class="btn btn-outline" aria-label="Hỏi giá {{ product.name }}">
+                            <i data-lucide="message-circle"></i> Hỏi giá Zalo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROMOTIONAL POSTERS BANNER ===== -->
+<section id="posters" class="section text-white" style="padding: 90px 0; background: #0a0b0d url('{{ url_for('static', filename='uploads/poster_section_bg_1789320724665.jpg') }}') center/cover no-repeat; position: relative; overflow: hidden;" aria-label="Bộ sưu tập Poster và Ưu đãi">
+    <style>
+        .poster-slider-wrapper {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.15);
+            background: #000000;
+        }
+        .poster-slider-track {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+        }
+        .poster-card {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: scale(1.02);
+            pointer-events: none;
+        }
+        .poster-card.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+        .poster-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .poster-content {
+            position: absolute;
+            bottom: 0;
+            inset-x: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+            color: #ffffff;
+            padding: 24px 28px;
+        }
+        .poster-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .poster-content p {
+            font-size: 0.98rem;
+            opacity: 0.95;
+            margin: 0;
+            color: rgba(255,255,255,0.9);
+        }
+        .poster-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(8px);
+            color: #111111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .poster-nav-btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-50%) scale(1.1);
+        }
+        .poster-prev { left: 18px; }
+        .poster-next { right: 18px; }
+        .poster-dots {
+            position: absolute;
+            bottom: 20px;
+            right: 28px;
+            display: flex;
+            gap: 8px;
+            z-index: 5;
+        }
+        .p-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .p-dot.active {
+            width: 28px;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+        @media (max-width: 768px) {
+            .poster-content { padding: 18px 20px; }
+            .poster-content h3 { font-size: 1.2rem; }
+            .poster-content p { font-size: 0.88rem; }
+            .poster-nav-btn { width: 38px; height: 38px; }
+        }
+    </style>
+
+    <style>
+        .showcase-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            margin-bottom: 28px;
+        }
+        .showcase-tab {
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.8);
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .showcase-tab:hover, .showcase-tab.active {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+        }
+        .poster-card-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffffff;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .poster-counter-pill {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            z-index: 5;
+        }
+    </style>
+
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span style="display: inline-block; padding: 5px 18px; background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #ffffff; border-radius: 20px; font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 12px; text-transform: uppercase;">BỘ SƯU TẬP MẪU THỰC TẾ</span>
+            <h2 style="color: #ffffff; font-size: 2.3rem; font-weight: 800; text-shadow: 0 4px 12px rgba(0,0,0,0.6); margin-bottom: 10px;">Mẫu Dây Đeo Thẻ, Thẻ Nhựa PVC &amp; Vỏ Thẻ Thực Tế</h2>
+            <p style="color: rgba(255,255,255,0.88); font-size: 1.08rem; max-width: 680px; margin: 0 auto;">Tổng hợp đầy đủ hình ảnh sản phẩm thực tế đã sản xuất cho doanh nghiệp, trường học, sự kiện, câu lạc bộ &amp; fandom.</p>
+
+            <div class="showcase-tabs">
+                <button class="showcase-tab active" onclick="filterShowcase('all', this)">Tất Cả ({{ showcase_items|length }})</button>
+                <button class="showcase-tab" onclick="filterShowcase('lanyard', this)">Dây Đeo Thẻ</button>
+                <button class="showcase-tab" onclick="filterShowcase('pvc', this)">Thẻ Nhựa PVC</button>
+                <button class="showcase-tab" onclick="filterShowcase('holder', this)">Vỏ Đựng Thẻ</button>
+            </div>
+        </div>
+
+        <div class="poster-slider-wrapper" data-aos="fade-up">
+            <div class="poster-counter-pill" id="posterCounterPill">1 / {{ showcase_items|length }}</div>
+            
+            <div class="poster-slider-track" id="posterTrack">
+                {% for item in showcase_items %}
+                <div class="poster-card {% if loop.first %}active{% endif %}" data-category="{{ item.category }}">
+                    <img src="{{ url_for('static', filename='uploads/' + item.img) }}" alt="{{ item.title }} - TagLuxe" loading="lazy">
+                    <div class="poster-content">
+                        <span class="poster-card-badge">{{ item.cat_label }}</span>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.desc }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="poster-nav-btn poster-prev" onclick="movePoster(-1)"><i data-lucide="chevron-left"></i></div>
+            <div class="poster-nav-btn poster-next" onclick="movePoster(1)"><i data-lucide="chevron-right"></i></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process" class="section text-white" style="background: radial-gradient(circle at 50% 0%, #1a1c23 0%, #0d0e12 100%); position: relative; overflow: hidden; padding: 100px 0;" aria-label="Quy trình đặt in dây đeo thẻ">
+    <style>
+        .process-header-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #a5b4fc;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .process-flow-container {
+            position: relative;
+            margin-top: 50px;
+        }
+        .process-line {
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.6) 50%, rgba(99, 102, 241, 0.2) 100%);
+            z-index: 1;
+        }
+        .process-grid-new {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+        .process-card-new {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px 22px 28px;
+            position: relative;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+        }
+        .process-card-new::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .process-card-new:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.15);
+        }
+        .process-card-new:hover::before {
+            opacity: 1;
+        }
+        .process-step-num {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.12);
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+        .process-card-new:hover .process-step-num {
+            color: rgba(168, 85, 247, 0.4);
+        }
+        .process-icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .process-card-new:hover .process-icon-box {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        .process-icon-box i, .process-icon-box svg {
+            width: 26px;
+            height: 26px;
+        }
+        .process-card-new h3 {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .process-card-new p {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.55;
+            margin: 0;
+        }
+        @media (max-width: 992px) {
+            .process-line { display: none; }
+            .process-grid-new {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 576px) {
+            .process-grid-new {
+                grid-template-columns: 1fr;
+            }
+            .process-card-new {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="process-header-badge">QUY TRÌNH 4 BƯỚC ĐƠN GIẢN</span>
+            <h2 style="color: #ffffff; font-size: 2.3rem; font-weight: 800; margin-bottom: 12px;">Quy trình đặt in dây đeo thẻ tại TagLuxe</h2>
+            <p style="color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 600px; margin: 0 auto;">Chỉ cần nhắn tin — chúng tôi lo phần còn lại. Đơn giản, nhanh chóng và chuyên nghiệp.</p>
+        </div>
+
+        <div class="process-flow-container">
+            <div class="process-line"></div>
+            <div class="process-grid-new">
+                <div class="process-card-new" data-aos="fade-up" data-aos-delay="100">
+                    <span class="process-step-num">01</span>
+                    <div class="process-icon-box"><i data-lucide="message-square"></i></div>
+                    <h3>1. Gửi Nhu Cầu</h3>
+                    <p>Nhắn tin qua Zalo hoặc Fanpage TagLuxe với số lượng dây &amp; ý tưởng thiết kế của bạn.</p>
+                </div>
+
+                <div class="process-card-new" data-aos="fade-up" data-aos-delay="200">
+                    <span class="process-step-num">02</span>
+                    <div class="process-icon-box"><i data-lucide="wallet"></i></div>
+                    <h3>2. Nhận Cọc &amp; Lên Demo</h3>
+                    <p>TagLuxe báo giá chi tiết, nhận tiền đặt cọc và hỗ trợ lên thiết kế demo 2D cơ bản.</p>
+                </div>
+
+                <div class="process-card-new" data-aos="fade-up" data-aos-delay="300">
+                    <span class="process-step-num">03</span>
+                    <div class="process-icon-box"><i data-lucide="edit-3"></i></div>
+                    <h3>3. Chỉnh Sửa &amp; Duyệt Mẫu</h3>
+                    <p>Hỗ trợ chỉnh sửa thiết kế theo yêu cầu sau khi lên demo cho đến khi khách duyệt mẫu cuối cùng.</p>
+                </div>
+
+                <div class="process-card-new" data-aos="fade-up" data-aos-delay="400">
+                    <span class="process-step-num">04</span>
+                    <div class="process-icon-box"><i data-lucide="truck"></i></div>
+                    <h3>4. Sản Xuất &amp; Giao Hàng</h3>
+                    <p>In ấn chuyển nhiệt hoàn thiện trong 2-4 ngày, đóng gói cẩn thận &amp; giao toàn quốc.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS (social proof + SEO) ===== -->
+<section id="danh-gia" class="section" aria-label="Đánh giá khách hàng TagLuxe">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Khách hàng nói về TagLuxe</h2>
+            <p>Hơn 500+ đơn hàng hoàn thành. Khách hàng từ doanh nghiệp, trường học, câu lạc bộ và cộng đồng fandom.</p>
+        </div>
+        <div class="testimonial-grid" data-aos="fade-up">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"In lụa satin rất đẹp, màu sắc chuẩn y bản demo. Giao hàng nhanh, đóng gói cẩn thận. Shop rất nhiệt tình tư vấn. Sẽ quay lại lần sau!"</p>
+                <div class="testimonial-author">
+                    <strong>Chị Minh Thư</strong>
+                    <span>Trường THPT, TP.HCM</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Đặt 200 dây đeo cho sự kiện hội nghị, sản xuất đúng hẹn, chất lượng vượt kỳ vọng. Màu logo chuẩn, không bị lem hay phai. Rất hài lòng."</p>
+                <div class="testimonial-author">
+                    <strong>Anh Quốc Hùng</strong>
+                    <span>Công ty TNHH, Hà Nội</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Mình đặt dây đeo cho fanclub, shop tư vấn nhiệt tình từ chất liệu đến màu sắc. Ảnh demo cực đẹp, sản phẩm thật y hệt. Cả nhóm đều thích!"</p>
+                <div class="testimonial-author">
+                    <strong>Bạn Ngọc Linh</strong>
+                    <span>Fandom, TP.HCM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ SECTION (giúp lên top Google) ===== -->
+<section id="faq" class="section bg-light" aria-label="Câu hỏi thường gặp về in dây đeo thẻ">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Câu hỏi thường gặp về in dây đeo thẻ</h2>
+            <p>Giải đáp nhanh các thắc mắc phổ biến khi đặt in dây đeo thẻ tại TagLuxe.</p>
+        </div>
+        <div class="faq-list" data-aos="fade-up">
+            <details class="faq-item">
+                <summary><h3>Đặt in dây đeo thẻ số lượng tối thiểu là bao nhiêu?</h3></summary>
+                <p>TagLuxe nhận in dây đeo thẻ từ <strong>10 dây</strong> trở lên. Phù hợp cho cả câu lạc bộ nhỏ lẫn doanh nghiệp lớn.</p>
+            </details>
+            <details class="faq-item">
+                <summary><h3>Phí thiết kế demo có mất tiền không?</h3></summary>
+                <p>TagLuxe <strong>hỗ trợ thiết kế demo 2D cơ bản</strong> cho khách hàng trước khi đưa vào sản xuất.</p>
+            </details>
+            <details class="faq-item">
+                <summary><h3>Thời gian sản xuất dây đeo thẻ là bao lâu?</h3></summary>
+                <p>Thông thường <strong>2-4 ngày làm việc</strong> từ khi duyệt mẫu. Có dịch vụ in gấp 1-2 ngày tùy yêu cầu.</p>
+            </details>
+            <details class="faq-item">
+                <summary><h3>TagLuxe có hỗ trợ xuất hóa đơn VAT không?</h3></summary>
+                <p><strong>Có.</strong> TagLuxe hỗ trợ xuất hóa đơn VAT đầy đủ cho doanh nghiệp và tổ chức có yêu cầu.</p>
+            </details>
+            <details class="faq-item">
+                <summary><h3>In dây đeo thẻ với logo phức tạp, nhiều màu có được không?</h3></summary>
+                <p><strong>Được.</strong> Công nghệ in chuyển nhiệt của TagLuxe cho phép in <strong>full màu không giới hạn</strong>, sắc nét đến từng chi tiết nhỏ, kể cả hình ảnh gradient hay nhân vật phức tạp.</p>
+            </details>
+            <details class="faq-item">
+                <summary><h3>TagLuxe giao hàng ở đâu?</h3></summary>
+                <p>TagLuxe giao hàng <strong>toàn quốc</strong> qua đơn vị vận chuyển. Miễn phí giao hàng nội thành TP.HCM cho đơn từ 100 dây.</p>
+            </details>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Smooth scroll cho FAQ
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('toggle', function() {
+        if (this.open) {
+            document.querySelectorAll('.faq-item').forEach(other => {
+                if (other !== this) other.removeAttribute('open');
+            });
+        }
+    });
+});
+
+// Hero Auto Slider
+let currentHeroIndex = 0;
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.hero-slider-dots .dot');
+const totalHeroSlides = heroSlides.length;
+
+function showHeroSlide(index) {
+    if (totalHeroSlides === 0) return;
+    heroSlides.forEach(s => s.classList.remove('active'));
+    heroDots.forEach(d => d.classList.remove('active'));
+    
+    currentHeroIndex = (index + totalHeroSlides) % totalHeroSlides;
+    heroSlides[currentHeroIndex].classList.add('active');
+    if (heroDots[currentHeroIndex]) heroDots[currentHeroIndex].classList.add('active');
+}
+
+window.setHeroSlide = function(index) {
+    showHeroSlide(index);
+    resetHeroTimer();
+};
+
+let heroTimer = setInterval(() => {
+    showHeroSlide(currentHeroIndex + 1);
+}, 3500);
+
+// Showcase Slider with Filter & Counter
+let currentPosterIndex = 0;
+let currentCategory = 'all';
+
+function getVisiblePosters() {
+    const allCards = Array.from(document.querySelectorAll('.poster-card'));
+    if (currentCategory === 'all') return allCards;
+    return allCards.filter(c => c.getAttribute('data-category') === currentCategory);
+}
+
+function showPoster(index) {
+    const visibleCards = getVisiblePosters();
+    const allCards = document.querySelectorAll('.poster-card');
+    if (visibleCards.length === 0) return;
+
+    allCards.forEach(c => c.classList.remove('active'));
+
+    currentPosterIndex = (index + visibleCards.length) % visibleCards.length;
+    const activeCard = visibleCards[currentPosterIndex];
+    if (activeCard) {
+        activeCard.classList.add('active');
+    }
+
+    const pill = document.getElementById('posterCounterPill');
+    if (pill) {
+        pill.textContent = `${currentPosterIndex + 1} / ${visibleCards.length}`;
+    }
+}
+
+window.filterShowcase = function(cat, btn) {
+    currentCategory = cat;
+    document.querySelectorAll('.showcase-tab').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    showPoster(0);
+    resetPosterTimer();
+};
+
+window.movePoster = function(dir) {
+    showPoster(currentPosterIndex + dir);
+    resetPosterTimer();
+};
+
+let posterTimer = setInterval(() => {
+    showPoster(currentPosterIndex + 1);
+}, 4500);
+
+function resetPosterTimer() {
+    clearInterval(posterTimer);
+    posterTimer = setInterval(() => {
+        showPoster(currentPosterIndex + 1);
+    }, 4500);
+}
+</script>
+{% endblock %}
