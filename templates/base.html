@@ -152,7 +152,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=3.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=3.1">
 
     <!-- Preload critical above-fold image -->
     {% block preload_image %}{% endblock %}
@@ -181,7 +181,8 @@
             <a href="/" class="logo" aria-label="TagLuxe - Trang chủ">
                 <img src="{{ url_for('static', filename='uploads/media_1786037638569.jpg') }}"
                      alt="Logo TagLuxe - In dây đeo thẻ theo yêu cầu"
-                     width="40" height="40" loading="eager">
+                     width="40" height="40" loading="eager"
+                     style="border-radius:50%; object-fit:cover; border:1.5px solid var(--border-color); box-shadow:0 2px 6px rgba(0,0,0,0.1);">
                 <div class="logo-text">
                     <span class="brand">TAGLUXE</span>
                     <span class="brand-sub">In dây đeo thẻ theo yêu cầu</span>
