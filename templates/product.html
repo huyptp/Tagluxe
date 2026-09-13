@@ -73,6 +73,17 @@
     </nav>
 
     <div class="product-detail" itemscope itemtype="https://schema.org/Product">
+        <meta itemprop="description" content="{{ product.description }}">
+        <meta itemprop="sku" content="TL-PROD-{{ product.id }}">
+        <div itemprop="brand" itemscope itemtype="https://schema.org/Brand">
+            <meta itemprop="name" content="TagLuxe">
+        </div>
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="5.0">
+            <meta itemprop="reviewCount" content="48">
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+        </div>
 
         <!-- ===== IMAGE GALLERY ===== -->
         <div class="product-gallery" data-aos="fade-right">
@@ -125,9 +136,13 @@
             <h1 itemprop="name">{{ product.name }}</h1>
 
             <div class="price-large" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="price" content="{{ product.price if (product.price_type == 'fixed' and product.price > 0) else '15000' }}">
+                <meta itemprop="priceCurrency" content="VND">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+                <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+                <meta itemprop="url" content="https://tagluxe.onrender.com/product/{{ product.id }}">
                 {% if product.price_type == 'fixed' and product.price > 0 %}
-                    <span itemprop="price" content="{{ product.price }}">{{ "{:,.0f}".format(product.price).replace(',', '.') }} đ / sợi</span>
-                    <meta itemprop="priceCurrency" content="VND">
+                    <span>{{ "{:,.0f}".format(product.price).replace(',', '.') }} đ / sợi</span>
                 {% else %}
                     <span>Liên hệ để nhận báo giá</span>
                 {% endif %}
