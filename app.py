@@ -1,6 +1,9 @@
 import os
 import json
 import uuid
+import threading
+import time
+import urllib.request
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, session, flash, url_for, Response
 from werkzeug.utils import secure_filename
@@ -295,6 +298,36 @@ def add_seo_headers(response):
     response.headers['X-Frame-Options'] = 'SAMEORIGIN'
     response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
     return response
+
+
+# ===== KEEP-ALIVE: Prevent Render free tier from sleeping =====
+@app.route('/ping')
+def ping():
+    """Health check endpoint used by keep-alive thread"""
+    return 'OK', 200
+
+def _keep_alive_worker():
+    """
+    Background thread: ping the app's own public URL every 10 minutes
+    so Render's free tier never sleeps. Only runs on Render (RENDER env var set).
+    """
+    site_url = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
+    ping_url = f'{site_url}/ping'
+    # Wait 2 minutes after startup before first ping
+    time.sleep(120)
+    while True:
+        try:
+            with urllib.request.urlopen(ping_url, timeout=15) as resp:
+                pass  # just keep the connection alive
+        except Exception:
+            pass  # ignore errors, retry next cycle
+        time.sleep(600)  # ping every 10 minutes
+
+# Only start keep-alive on Render deployment (RENDER env var is set by Render automatically)
+if os.environ.get('RENDER'):
+    _t = threading.Thread(target=_keep_alive_worker, daemon=True)
+    _t.start()
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
