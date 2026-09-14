@@ -50,6 +50,35 @@
 </script>
 {% endblock %}
 
+{% block breadcrumb_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://tagluxe.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ 'Dây đeo thẻ' if product.category == 'lanyard' else 'Thẻ & Vỏ thẻ' }}",
+      "item": "https://tagluxe.onrender.com/#{{ 'products' if product.category == 'lanyard' else 'accessories' }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ product.name }}",
+      "item": "https://tagluxe.onrender.com/product/{{ product.id }}"
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="container section">
 

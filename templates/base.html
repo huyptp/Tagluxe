@@ -11,6 +11,13 @@
     <meta name="author" content="TagLuxe">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#111111">
+    <!-- Geo & Language targeting -->
+    <meta name="geo.region" content="VN-SG">
+    <meta name="geo.placename" content="Thành phố Hồ Chí Minh">
+    <meta name="geo.position" content="10.8400;106.7800">
+    <meta name="ICBM" content="10.8400, 106.7800">
+    <meta http-equiv="content-language" content="vi">
+    <meta name="language" content="Vietnamese">
 
     <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='uploads/media_1786037638569.jpg') }}">
@@ -215,6 +222,30 @@
 
     <!-- ===== PRODUCT SCHEMA ===== -->
     {% block product_schema %}{% endblock %}
+
+    <!-- ===== BREADCRUMB SCHEMA ===== -->
+    {% block breadcrumb_schema %}{% endblock %}
+
+    <!-- ===== WEBSITE SCHEMA with SearchAction ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://tagluxe.onrender.com/#website",
+      "name": "TagLuxe",
+      "url": "https://tagluxe.onrender.com",
+      "description": "Chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ tại TP.HCM và Hà Nội",
+      "inLanguage": "vi-VN",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TagLuxe",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tagluxe.onrender.com/static/uploads/media_1786037638569.jpg"
+        }
+      }
+    }
+    </script>
 
     <!-- Performance: DNS prefetch & preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

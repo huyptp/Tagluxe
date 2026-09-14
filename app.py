@@ -257,23 +257,26 @@ def sitemap():
     site_url = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
-    xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+    xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"\n'
+    xml += '        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">\n'
     # Trang chủ
-    xml += f'  <url><loc>{site_url}/</loc><lastmod>{now}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n'
-    # Trang sản phẩm + images
+    xml += f'  <url><loc>{site_url}/</loc><lastmod>{now}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><mobile:mobile/></url>\n'
+    # Trang sản phẩm + images (tất cả ảnh, không giới hạn 5)
     for p in products:
         xml += f'  <url>\n'
         xml += f'    <loc>{site_url}/product/{p["id"]}</loc>\n'
         xml += f'    <lastmod>{now}</lastmod>\n'
         xml += f'    <changefreq>monthly</changefreq>\n'
-        xml += f'    <priority>0.8</priority>\n'
+        xml += f'    <priority>0.9</priority>\n'
+        xml += f'    <mobile:mobile/>\n'
         imgs = p.get('images') or ([p.get('image')] if p.get('image') else [])
-        for img in imgs[:5]:
+        for img in imgs:  # Tất cả ảnh, không giới hạn
             if img:
                 xml += f'    <image:image>\n'
                 xml += f'      <image:loc>{site_url}/static/uploads/{img}</image:loc>\n'
                 xml += f'      <image:title>{p["name"]} - TagLuxe</image:title>\n'
-                xml += f'    </image:image>\n'
+                xml += f'      <image:caption>{p.get("description", p["name"])} | TagLuxe - In dây đeo thẻ theo yêu cầu</image:caption>\n'
+            xml += f'    </image:image>\n'
         xml += f'  </url>\n'
     xml += '</urlset>'
     return Response(xml, mimetype='application/xml')
