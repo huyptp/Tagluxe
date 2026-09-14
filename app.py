@@ -5,6 +5,8 @@ import threading
 import time
 import urllib.request
 from datetime import datetime
+from urllib.parse import quote, urlsplit
+from xml.etree import ElementTree as ET
 from flask import Flask, render_template, request, redirect, session, flash, url_for, Response
 from werkzeug.utils import secure_filename
 
@@ -16,6 +18,33 @@ app.config['FACEBOOK_PIXEL_ID'] = os.environ.get('FACEBOOK_PIXEL_ID', '')
 app.config['GOOGLE_SITE_VERIFICATION'] = os.environ.get('GOOGLE_SITE_VERIFICATION', '')
 
 DATA_FILE = 'data.json'
+
+def site_origin():
+    value = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
+    parsed = urlsplit(value)
+    if parsed.scheme != 'https' or not parsed.netloc or parsed.path or parsed.query or parsed.fragment or parsed.username:
+        return 'https://tagluxe.onrender.com'
+    return value
+
+@app.context_processor
+def seo_context():
+    return {'site_url': site_origin()}
+
+def product_schema(product):
+    origin = site_origin()
+    result = {
+        '@context': 'https://schema.org', '@type': 'Product',
+        'name': product['name'], 'description': product.get('description', ''),
+        'url': origin + '/product/' + quote(product['id'], safe=''),
+        'brand': {'@type': 'Brand', 'name': 'TagLuxe'},
+        'sku': 'TL-PROD-' + product['id'],
+    }
+    images = product.get('images') or ([product['image']] if product.get('image') else [])
+    if images:
+        result['image'] = [origin + '/static/uploads/' + quote(img, safe='') for img in images if img]
+    if product.get('price_type') == 'fixed' and product.get('price', 0) > 0:
+        result['offers'] = {'@type': 'Offer', 'priceCurrency': 'VND', 'price': product['price'], 'url': result['url']}
+    return result
 
 def load_data():
     if not os.path.exists(DATA_FILE):
@@ -112,7 +141,7 @@ def product_detail(id):
     
     # Gợi ý phụ kiện
     accessories = [p for p in data.get('products', []) if p.get('category') == 'accessory' and p.get('visible', True)]
-    return render_template('product.html', product=product, accessories=accessories)
+    return render_template('product.html', product=product, accessories=accessories, product_jsonld=product_schema(product))
 
 # --- ADMIN ROUTES ---
 
@@ -253,37 +282,27 @@ def admin_delete_product(id):
 def sitemap():
     data = load_data()
     products = [p for p in data.get('products', []) if p.get('visible', True)]
-    now = datetime.now().strftime('%Y-%m-%d')
-    site_url = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
-    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
-    xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"\n'
-    xml += '        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">\n'
-    # Trang chủ
-    xml += f'  <url><loc>{site_url}/</loc><lastmod>{now}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><mobile:mobile/></url>\n'
-    # Trang sản phẩm + images (tất cả ảnh, không giới hạn 5)
-    for p in products:
-        xml += f'  <url>\n'
-        xml += f'    <loc>{site_url}/product/{p["id"]}</loc>\n'
-        xml += f'    <lastmod>{now}</lastmod>\n'
-        xml += f'    <changefreq>monthly</changefreq>\n'
-        xml += f'    <priority>0.9</priority>\n'
-        xml += f'    <mobile:mobile/>\n'
-        imgs = p.get('images') or ([p.get('image')] if p.get('image') else [])
-        for img in imgs:  # Tất cả ảnh, không giới hạn
-            if img:
-                xml += f'    <image:image>\n'
-                xml += f'      <image:loc>{site_url}/static/uploads/{img}</image:loc>\n'
-                xml += f'      <image:title>{p["name"]} - TagLuxe</image:title>\n'
-                xml += f'      <image:caption>{p.get("description", p["name"])} | TagLuxe - In dây đeo thẻ theo yêu cầu</image:caption>\n'
-            xml += f'    </image:image>\n'
-        xml += f'  </url>\n'
-    xml += '</urlset>'
-    return Response(xml, mimetype='application/xml')
+    origin = site_origin()
+    ns = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+    image_ns = 'http://www.google.com/schemas/sitemap-image/1.1'
+    ET.register_namespace('', ns)
+    ET.register_namespace('image', image_ns)
+    root = ET.Element(f'{{{ns}}}urlset')
+    home = ET.SubElement(root, f'{{{ns}}}url')
+    ET.SubElement(home, f'{{{ns}}}loc').text = origin + '/'
+    for product in products:
+        entry = ET.SubElement(root, f'{{{ns}}}url')
+        ET.SubElement(entry, f'{{{ns}}}loc').text = origin + '/product/' + quote(product['id'], safe='')
+        images = product.get('images') or ([product['image']] if product.get('image') else [])
+        for filename in dict.fromkeys(img for img in images if img):
+            image = ET.SubElement(entry, f'{{{image_ns}}}image')
+            ET.SubElement(image, f'{{{image_ns}}}loc').text = origin + '/static/uploads/' + quote(filename, safe='')
+    # Do not claim every URL was updated today when its content did not change.
+    return Response(ET.tostring(root, encoding='utf-8', xml_declaration=True), mimetype='application/xml')
 
 @app.route('/robots.txt')
 def robots():
-    site_url = os.environ.get('SITE_URL', 'https://tagluxe.onrender.com').rstrip('/')
+    site_url = site_origin()
     txt = f'User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/*\nSitemap: {site_url}/sitemap.xml\n'
     return Response(txt, mimetype='text/plain')
 
@@ -293,6 +312,8 @@ def page_not_found(e):
 
 @app.after_request
 def add_seo_headers(response):
+    if request.path.startswith('/admin') or request.path == '/ping' or response.status_code >= 400:
+        response.headers['X-Robots-Tag'] = 'noindex, nofollow'
     # Cache static assets
     if '/static/' in response.headers.get('Content-Type', '') or request.path.startswith('/static/'):
         response.headers['Cache-Control'] = 'public, max-age=2592000'

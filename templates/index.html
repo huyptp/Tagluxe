@@ -110,7 +110,7 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Trang chủ TagLuxe",
-      "item": "https://tagluxe.onrender.com/"
+      "item": "{{ site_url }}/"
     }
   ]
 }
@@ -439,19 +439,13 @@
                 <div itemprop="brand" itemscope itemtype="https://schema.org/Brand">
                     <meta itemprop="name" content="TagLuxe">
                 </div>
+                {% if product.price_type == 'fixed' and product.price > 0 %}
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <meta itemprop="price" content="{{ product.price if (product.price_type == 'fixed' and product.price > 0) else '15000' }}">
+                    <meta itemprop="price" content="{{ product.price }}">
                     <meta itemprop="priceCurrency" content="VND">
-                    <meta itemprop="availability" content="https://schema.org/InStock">
-                    <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
-                    <meta itemprop="url" content="https://tagluxe.onrender.com/product/{{ product.id }}">
+                    <meta itemprop="url" content="{{ site_url }}/product/{{ product.id }}">
                 </div>
-                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                    <meta itemprop="ratingValue" content="5.0">
-                    <meta itemprop="reviewCount" content="98">
-                    <meta itemprop="bestRating" content="5">
-                    <meta itemprop="worstRating" content="1">
-                </div>
+                {% endif %}
                 
                 <div class="acc-card-header">
                     <span class="acc-badge">

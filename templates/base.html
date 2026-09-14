@@ -24,14 +24,14 @@
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='uploads/media_1786037638569.jpg') }}">
 
     <!-- ===== CANONICAL ===== -->
-    <link rel="canonical" href="https://tagluxe.onrender.com{% block canonical_path %}/{% endblock %}">
+    <link rel="canonical" href="{{ site_url }}{% block canonical_path %}/{% endblock %}">
 
     <!-- ===== OPEN GRAPH (Facebook/Zalo preview) ===== -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-    <meta property="og:url" content="https://tagluxe.onrender.com{% block og_url %}/{% endblock %}">
+    <meta property="og:url" content="{{ site_url }}{% block og_url %}/{% endblock %}">
     <meta property="og:title" content="{% block og_title %}TagLuxe - In Dây Đeo Thẻ Theo Yêu Cầu Cao Cấp{% endblock %}">
     <meta property="og:description" content="{% block og_desc %}Đeo nhận diện, tỏa thương hiệu. Nhận in dây đeo thẻ từ 10 dây, hỗ trợ thiết kế cơ bản, Có VAT. Liên hệ Zalo: 0343 019 097.{% endblock %}">
-    <meta property="og:image" content="https://tagluxe.onrender.com/static/uploads/media_1786037638569.jpg">
+    <meta property="og:image" content="{{ site_url }}/static/uploads/media_1786037638569.jpg">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:image:alt" content="TagLuxe - In dây đeo thẻ theo yêu cầu">
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TagLuxe - In Dây Đeo Thẻ Theo Yêu Cầu">
     <meta name="twitter:description" content="Đeo nhận diện, tỏa thương hiệu. Nhận in dây đeo thẻ từ 10 dây.">
-    <meta name="twitter:image" content="https://tagluxe.onrender.com/static/uploads/media_1786037638569.jpg">
+    <meta name="twitter:image" content="{{ site_url }}/static/uploads/media_1786037638569.jpg">
 
     <!-- ===== GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
     {% if config.get('GOOGLE_SITE_VERIFICATION') %}
@@ -53,167 +53,66 @@
     {% block schema %}
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://tagluxe.onrender.com/#organization",
-      "name": "TagLuxe",
-      "description": "Chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ cho doanh nghiệp, trường học, câu lạc bộ và sự kiện tại TP.HCM.",
-      "url": "https://tagluxe.onrender.com",
-      "telephone": "+84343019097",
-      "image": "https://tagluxe.onrender.com/static/uploads/media_1786037638569.jpg",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tagluxe.onrender.com/static/uploads/media_1786037638569.jpg",
-        "width": 200,
-        "height": 200
-      },
-      "address": [
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "32 Đường số 2, Phường Tăng Nhơn Phú",
-          "addressLocality": "Thành phố Hồ Chí Minh",
-          "addressRegion": "TP.HCM",
-          "addressCountry": "VN"
-        },
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "51 Ngõ 1 Nguỵ Như Kon Tum, Phường Thanh Xuân",
-          "addressLocality": "Hà Nội",
-          "addressRegion": "Hà Nội",
-          "addressCountry": "VN"
-        }
-      ],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 10.8400,
-        "longitude": 106.7800
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "08:00",
-        "closes": "21:00"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+84343019097",
-        "contactType": "customer service",
-        "areaServed": "VN",
-        "availableLanguage": "Vietnamese"
-      },
-      "sameAs": [
-        "https://www.facebook.com/Tagluxe.indaydeothe",
-        "https://zalo.me/0343019097"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Dây đeo thẻ & Phụ kiện",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Dây đeo thẻ in theo yêu cầu",
-              "description": "In chuyển nhiệt sắc nét, nhiều chất liệu, nhận từ 10 dây",
-              "image": [
-                "https://tagluxe.onrender.com/static/uploads/media_1786037379657.jpg",
-                "https://tagluxe.onrender.com/static/uploads/media_1789285818629.jpg"
-              ],
-              "brand": { "@type": "Brand", "name": "TagLuxe" },
-              "sku": "TL-LANYARD-01",
-              "offers": {
-                "@type": "Offer",
-                "url": "https://tagluxe.onrender.com/#products",
-                "priceCurrency": "VND",
-                "price": "15000",
-                "priceValidUntil": "2027-12-31",
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "TagLuxe"
-                }
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5.0",
-                "reviewCount": "156",
-                "bestRating": "5",
-                "worstRating": "1"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Thẻ nhựa PVC in theo yêu cầu",
-              "description": "Thẻ nhựa PVC in 2 mặt full màu sắc nét",
-              "image": [
-                "https://tagluxe.onrender.com/static/uploads/media_1789319927667.jpg",
-                "https://tagluxe.onrender.com/static/uploads/media_1789287481496.jpg"
-              ],
-              "brand": { "@type": "Brand", "name": "TagLuxe" },
-              "sku": "TL-PVC-02",
-              "offers": {
-                "@type": "Offer",
-                "url": "https://tagluxe.onrender.com/#accessories",
-                "priceCurrency": "VND",
-                "price": "8000",
-                "priceValidUntil": "2027-12-31",
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "TagLuxe"
-                }
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "94",
-                "bestRating": "5",
-                "worstRating": "1"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Vỏ đựng thẻ (Card holder) in ấn",
-              "description": "Vỏ đựng thẻ in full màu theo thiết kế riêng",
-              "image": [
-                "https://tagluxe.onrender.com/static/uploads/media_1789319983784.jpg",
-                "https://tagluxe.onrender.com/static/uploads/media_1789320043265.jpg"
-              ],
-              "brand": { "@type": "Brand", "name": "TagLuxe" },
-              "sku": "TL-HOLDER-03",
-              "offers": {
-                "@type": "Offer",
-                "url": "https://tagluxe.onrender.com/#accessories",
-                "priceCurrency": "VND",
-                "price": "5000",
-                "priceValidUntil": "2027-12-31",
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "TagLuxe"
-                }
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "88",
-                "bestRating": "5",
-                "worstRating": "1"
-              }
-            }
-          }
-        ]
-      }
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site_url }}/#organization",
+  "name": "TagLuxe",
+  "description": "Chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ cho doanh nghiệp, trường học, câu lạc bộ và sự kiện tại TP.HCM.",
+  "url": "{{ site_url }}",
+  "telephone": "+84343019097",
+  "image": "{{ site_url }}/static/uploads/media_1786037638569.jpg",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site_url }}/static/uploads/media_1786037638569.jpg",
+    "width": 200,
+    "height": 200
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "32 Đường số 2, Phường Tăng Nhơn Phú",
+      "addressLocality": "Thành phố Hồ Chí Minh",
+      "addressRegion": "TP.HCM",
+      "addressCountry": "VN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "51 Ngõ 1 Nguỵ Như Kon Tum, Phường Thanh Xuân",
+      "addressLocality": "Hà Nội",
+      "addressRegion": "Hà Nội",
+      "addressCountry": "VN"
     }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 10.84,
+    "longitude": 106.78
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "21:00"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+84343019097",
+    "contactType": "customer service",
+    "areaServed": "VN",
+    "availableLanguage": "Vietnamese"
+  },
+  "sameAs": [
+    "https://www.facebook.com/Tagluxe.indaydeothe",
+    "https://zalo.me/0343019097"
+  ]
+}
     </script>
     {% endblock %}
 
@@ -231,9 +130,9 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": "https://tagluxe.onrender.com/#website",
+      "@id": "{{ site_url }}/#website",
       "name": "TagLuxe",
-      "url": "https://tagluxe.onrender.com",
+      "url": "{{ site_url }}",
       "description": "Chuyên in dây đeo thẻ theo yêu cầu, thẻ nhựa PVC, vỏ đựng thẻ tại TP.HCM và Hà Nội",
       "inLanguage": "vi-VN",
       "publisher": {
@@ -241,7 +140,7 @@
         "name": "TagLuxe",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://tagluxe.onrender.com/static/uploads/media_1786037638569.jpg"
+          "url": "{{ site_url }}/static/uploads/media_1786037638569.jpg"
         }
       }
     }
